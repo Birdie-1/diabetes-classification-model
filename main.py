@@ -17,9 +17,10 @@ sns.set(style="whitegrid")
 # =======================================================
 features = ["Glucose", "BMI", "Age", "BloodPressure"]
 
-plt.figure(figsize=(12, 8))
 df[features].hist(bins=20, figsize=(12, 8))
 plt.suptitle("Histogram of Glucose, BMI, Age, BloodPressure")
+plt.tight_layout()
+plt.tight_layout()
 plt.show()
 
 
@@ -31,12 +32,14 @@ plt.show()
 plt.figure(figsize=(10, 5))
 sns.boxplot(data=df, x="Outcome", y="Glucose")
 plt.title("Glucose vs Outcome (Boxplot)")
+plt.tight_layout()
 plt.show()
 
 # BMI vs Outcome
 plt.figure(figsize=(10, 5))
 sns.boxplot(data=df, x="Outcome", y="BMI")
 plt.title("BMI vs Outcome (Boxplot)")
+plt.tight_layout()
 plt.show()
 
 
@@ -46,6 +49,7 @@ plt.show()
 plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr(), annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Correlation Heatmap")
+plt.tight_layout()
 plt.show()
 
 
@@ -57,6 +61,7 @@ df['Outcome'].value_counts().plot(kind='bar', color=['skyblue', 'salmon'])
 plt.title("Count of Diabetes Outcome")
 plt.xlabel("Outcome (0 = No, 1 = Yes)")
 plt.ylabel("Number of People")
+plt.tight_layout()
 plt.show()
 
 
