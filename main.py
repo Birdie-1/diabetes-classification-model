@@ -18,7 +18,7 @@ sns.set(style="whitegrid")
 features = ["Glucose", "BMI", "Age", "BloodPressure"]
 
 plt.figure(figsize=(12, 8))
-df[features].hist(bins=20, figsize=(12, 8))
+df[features].hist(bins=20, figsize=(12, 8), color='steelblue')
 plt.suptitle("Histogram of Glucose, BMI, Age, BloodPressure")
 plt.show()
 
@@ -29,13 +29,13 @@ plt.show()
 
 # Glucose vs Outcome
 plt.figure(figsize=(10, 5))
-sns.boxplot(data=df, x="Outcome", y="Glucose")
+sns.boxplot(data=df, x="Outcome", y="Glucose", palette="Set2")
 plt.title("Glucose vs Outcome (Boxplot)")
 plt.show()
 
 # BMI vs Outcome
 plt.figure(figsize=(10, 5))
-sns.boxplot(data=df, x="Outcome", y="BMI")
+sns.boxplot(data=df, x="Outcome", y="BMI", palette="Set2")
 plt.title("BMI vs Outcome (Boxplot)")
 plt.show()
 
@@ -61,7 +61,13 @@ plt.show()
 
 
 # =======================================================
-# PAIRPLOT (Optional)
+# PAIRPLOT (แก้ไขให้ดูง่าย – KDE ปกติ)
 # =======================================================
-sns.pairplot(df[["Glucose","BMI","Age","BloodPressure","Outcome"]], hue="Outcome")
+sns.pairplot(
+    df[["Glucose", "BMI", "Age", "BloodPressure", "Outcome"]],
+    hue="Outcome",
+    diag_kind="kde",     # วาด KDE บนแกน X ปกติ
+    corner=False,
+    palette="Set1"
+)
 plt.show()
