@@ -74,6 +74,7 @@ sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.title("Confusion Matrix")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
+plt.tight_layout()
 plt.show()
 
 # =======================================================
@@ -89,6 +90,7 @@ sns.barplot(x=importances.values, y=importances.index)
 plt.title("Feature Importance from Random Forest")
 plt.xlabel("Importance Score")
 plt.ylabel("Feature")
+plt.tight_layout()
 plt.show()
 
 print("\n==== FEATURE IMPORTANCE ====")
